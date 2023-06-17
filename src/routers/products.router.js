@@ -27,5 +27,8 @@ productRouter.get('/:pid', async (req,res)=>{
         res.status(500).send('Error en el servidor ' + error);
     }
 });
-
+//agregar un nuevo producto
+productRouter.post('/',(req, res)=>{
+    console.log('hola', req.body);
+})
 export {productRouter};

@@ -1,5 +1,5 @@
 import express from 'express';
-
+import { v4 as uuidv4 } from 'uuid';
 import { cartsRouter } from './src/routers/carts.router.js';
 import { productRouter } from './src/routers/products.router.js';
 const app = express();
@@ -9,4 +9,4 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/api/carts', cartsRouter);
 app.use('/api/products', productRouter);
-app.listen(port,()=>{console.log('Servidor escuchando en el puerto' + port)});
+app.listen(port,()=>{console.log('Servidor escuchando en el puerto: ' + port)});
